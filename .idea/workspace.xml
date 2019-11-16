@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Trabajo2Guimpel" targetName="Trabajo2Guimpel" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e9592411-207b-4999-b2b4-d33574683512" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1TTjEoid4cJB5isc1mJZS74hIVV" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/time.sh" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.Trabajo2Guimpel (test)">
+    <configuration name="Trabajo2Guimpel (test)" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-t" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trabajo2Guimpel" TARGET_NAME="Trabajo2Guimpel" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Trabajo2Guimpel" RUN_TARGET_NAME="Trabajo2Guimpel">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Trabajo2Guimpel" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--cantidadDeGente 2" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trabajo2Guimpel" TARGET_NAME="Trabajo2Guimpel" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Trabajo2Guimpel" RUN_TARGET_NAME="Trabajo2Guimpel">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="time" type="ShConfigurationType">
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/time.sh" />
+      <option name="SCRIPT_OPTIONS" value="./cmake-build-debug/Trabajo2Guimpel" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Trabajo2Guimpel" />
+      <item itemvalue="CMake Application.Trabajo2Guimpel (test)" />
+      <item itemvalue="Shell Script.time" />
+    </list>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="localidades-&gt;array[2133]" language="ObjectiveC" />
+        <watch expression="personas-&gt;array[personas-&gt;ultimoIndice-1]-&gt;data-&gt;array" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
