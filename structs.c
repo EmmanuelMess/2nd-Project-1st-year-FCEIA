@@ -1,5 +1,6 @@
 #include "structs.h"
 #include <malloc.h>
+#include <zconf.h>
 #include "constantes.h"
 
 struct String* crearString(int largo) {
@@ -36,11 +37,14 @@ void reasignarAMedida(struct String* string) {
  *
  * Es un tamaño de pagina de memoria en Linux para que se pida lo menos seguido posible pero sin pedir demasiado.
  */
-const int LARGO_DE_ASIGNACION_ARRAY_STRINGS = 1024 * 4 / sizeof(struct String*);//4KB
+unsigned long largoDeAsignacionArrayStrings() {
+	return sysconf(_SC_PAGESIZE) / sizeof(struct Persona*);
+}
+
 
 struct ArrayStrings* crearArrayStrings() {
 	struct ArrayStrings* arrayStrings = malloc(sizeof(struct ArrayStrings));
-	arrayStrings->largoAsignado = LARGO_DE_ASIGNACION_ARRAY_STRINGS;
+	arrayStrings->largoAsignado = largoDeAsignacionArrayStrings();
 	arrayStrings->array = reallocarray(NULL, arrayStrings->largoAsignado, sizeof(struct String*));
 	arrayStrings->ultimoIndice = 0;
 
@@ -57,7 +61,7 @@ void destruirArrayStrings(struct ArrayStrings* arrayStrings) {
 }
 
 void agrandarArrayStrings(struct ArrayStrings* arrayStrings) {
-	arrayStrings->largoAsignado += LARGO_DE_ASIGNACION_ARRAY_STRINGS;
+	arrayStrings->largoAsignado += largoDeAsignacionArrayStrings();
 	arrayStrings->array = reallocarray(arrayStrings->array, arrayStrings->largoAsignado, sizeof(struct String*));
 }
 
@@ -101,11 +105,13 @@ void destruirPersona(struct Persona* persona) {
  *
  * Es un tamaño de pagina de memoria en Linux para que se pida lo menos seguido posible pero sin pedir demasiado.
  */
-const int LARGO_DE_ASIGNACION_ARRAY_PERSONAS = 1024 * 4 / sizeof(struct Persona*);//4KB
+unsigned long largoDeAsignacionArrayPersonas() {
+	return sysconf(_SC_PAGESIZE) / sizeof(struct Persona*);
+}
 
 struct ArrayPersonas* crearArrayPersonas() {
 	struct ArrayPersonas* arrayStrings = malloc(sizeof(struct ArrayPersonas));
-	arrayStrings->largoAsignado = LARGO_DE_ASIGNACION_ARRAY_PERSONAS;
+	arrayStrings->largoAsignado = largoDeAsignacionArrayPersonas();
 	arrayStrings->array = reallocarray(NULL, arrayStrings->largoAsignado, sizeof(struct Persona*));
 	arrayStrings->ultimoIndice = 0;
 
@@ -121,6 +127,6 @@ void destruirArrayPersonas(struct ArrayPersonas* arrayPersonas) {
 }
 
 void agrandarArrayPersonas(struct ArrayPersonas* arrayStrings) {
-	arrayStrings->largoAsignado += LARGO_DE_ASIGNACION_ARRAY_PERSONAS;
+	arrayStrings->largoAsignado += largoDeAsignacionArrayPersonas();
 	arrayStrings->array = reallocarray(arrayStrings->array, arrayStrings->largoAsignado, sizeof(char*));
 }

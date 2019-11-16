@@ -11,7 +11,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9592411-207b-4999-b2b4-d33574683512" name="Default Changelist" comment="" />
+    <list default="true" id="e9592411-207b-4999-b2b4-d33574683512" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salida.txt" beforeDir="false" afterPath="$PROJECT_DIR$/salida.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs.c" beforeDir="false" afterPath="$PROJECT_DIR$/structs.c" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +28,14 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1TTjEoid4cJB5isc1mJZS74hIVV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/time.sh" />
     <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
@@ -41,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.Trabajo2Guimpel (test)">
+  <component name="RunManager" selected="CMake Application.Trabajo2Guimpel">
     <configuration name="Trabajo2Guimpel (test)" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-t" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Trabajo2Guimpel" TARGET_NAME="Trabajo2Guimpel" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Trabajo2Guimpel" RUN_TARGET_NAME="Trabajo2Guimpel">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -65,11 +76,22 @@
       <item itemvalue="Shell Script.time" />
     </list>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="localidades-&gt;array[2133]" language="ObjectiveC" />
-        <watch expression="personas-&gt;array[personas-&gt;ultimoIndice-1]-&gt;data-&gt;array" language="ObjectiveC" />
+        <watch expression="st.st_size / LARGO_PROMEDIO_LINEA " language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>

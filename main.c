@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
@@ -175,7 +174,7 @@ int main(int argc, char * argv []) {
 		return 0;
 	}
 
-	struct ArrayStrings* localidades = crearArrayStrings();//TODO pedir RAM directamente proporcional con el tamaño del archivo
+	struct ArrayStrings* localidades = crearArrayStrings();
 	leerLocalidades(localidades);
 
 	struct ArrayPersonas* personas = crearArrayPersonas();
