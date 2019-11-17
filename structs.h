@@ -87,6 +87,7 @@ void agrandarArrayStrings(struct ArrayStrings* arrayStrings);
 
 /**
  * Contenedor de un struct String que sirve para manipular y formatear personas mas facilmente.
+ * //TODO esto deberia ser un typedef Persona struct String*
  */
 struct Persona {
 	struct String *personaImprimible;

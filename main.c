@@ -60,18 +60,16 @@ unsigned long randExtendido() {
 
 
 /*PARTE 3*/
-
 void leerLocalidades(struct ArrayStrings* localidades) {
 	FILE* archivoLocalidades = fopen("codigoLocalidades.txt", "r");
+	leerLocalidades_testeable(localidades, archivoLocalidades);
+	fclose(archivoLocalidades);
+}
 
-	{
-		struct String *nombreLocalidad = crearString(8);
-		strcpy(nombreLocalidad->array, "NINGUNA\0");
-		nombreLocalidad->ultimoIndice = 9;
-
-		localidades->array[localidades->ultimoIndice++] = nombreLocalidad;
-	}
-
+/**
+ * Funcion de testeo, ver tests.h
+ */
+void leerLocalidades_testeable(struct ArrayStrings* localidades, FILE * archivoLocalidades) {
 	while(!feof(archivoLocalidades)) {
 		if(localidades->ultimoIndice == localidades->largoAsignado - 1) {
 			agrandarArrayStrings(localidades);
@@ -97,8 +95,6 @@ void leerLocalidades(struct ArrayStrings* localidades) {
 		}
 	}
 
-	fclose(archivoLocalidades);
-
 	for(unsigned int i = 0; i < localidades->ultimoIndice; i++){
 		if(DEBUG) printf("%d: %s\n", i+1, localidades->array[i]->array);
 	}
@@ -107,6 +103,15 @@ void leerLocalidades(struct ArrayStrings* localidades) {
 void leerPersonasYParsear(struct ArrayPersonas* personas, struct ArrayStrings* localidades) {
 	FILE* archivoPersonas = fopen("personas.txt", "r");
 
+	leerPersonasYParsear_testeable(personas, localidades, archivoPersonas);
+
+	fclose(archivoPersonas);
+}
+
+/**
+ * Funcion de testeo, ver tests.h
+ */
+void leerPersonasYParsear_testeable(struct ArrayPersonas* personas, struct ArrayStrings* localidades, FILE * archivoPersonas) {
 	while(!feof(archivoPersonas)) {
 		if (personas->ultimoIndice == personas->largoAsignado - 1) {
 			agrandarArrayPersonas(personas);
@@ -131,7 +136,7 @@ void leerPersonasYParsear(struct ArrayPersonas* personas, struct ArrayStrings* l
 		fscanf(archivoPersonas, "%c", &gusto);
 
 
-		int codigoLocalidad = stringAEnteroPositivo(codigoLocalidadStr);
+		int codigoLocalidad = stringAEnteroPositivo(codigoLocalidadStr) - 1;
 		struct String *localidad = localidades->array[codigoLocalidad];
 
 
@@ -148,8 +153,6 @@ void leerPersonasYParsear(struct ArrayPersonas* personas, struct ArrayStrings* l
 			fgetc(archivoPersonas);//Come finales de linea y adelanta hasta el EOF si llegamos al final
 		}
 	}
-
-	fclose(archivoPersonas);
 
 	for(unsigned long i = 0; i < personas->ultimoIndice; i++){
 		if(DEBUG) printf("%ld: %s\n", i+1, personas->array[i]->personaImprimible->array);
