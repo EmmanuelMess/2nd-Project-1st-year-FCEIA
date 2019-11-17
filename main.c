@@ -58,6 +58,23 @@ unsigned long randExtendido() {
 	return x;
 }
 
+/**
+ * Ba'haal the end of line eater
+ * Come todo hasta la siguiente linea.
+ * Si la siguiente linea contiene un EOF al inicio, tambien lo come.
+ */
+void comerFinalesDeLinea(FILE * archivo) {
+	int c;
+	while ((c = fgetc(archivo)) == '\r' || c == '\n') {
+		if(c == '\r') {
+			fgetc(archivo);// come el \n
+		}
+	}
+	if (c != EOF) {
+		ungetc(c, archivo);
+	}
+}
+
 
 /*PARTE 3*/
 void leerLocalidades(struct ArrayStrings* localidades) {
@@ -90,9 +107,7 @@ void leerLocalidades_testeable(struct ArrayStrings* localidades, FILE * archivoL
 
 		localidades->ultimoIndice++;
 
-		if(fgetc(archivoLocalidades) == '\r'){
-			fgetc(archivoLocalidades);//Come finales de linea y adelanta hasta el EOF si llegamos al final
-		}
+		comerFinalesDeLinea(archivoLocalidades);
 	}
 
 	for(unsigned int i = 0; i < localidades->ultimoIndice; i++){
@@ -145,13 +160,11 @@ void leerPersonasYParsear_testeable(struct ArrayPersonas* personas, struct Array
 			apellido,
 			localidad->array,
 			edad,
-			GENEROS[charAEntero(genero)-1],
-			GUSTOS[charAEntero(gusto)-1]
+			GENEROS[charAEntero(genero) - 1],
+			GUSTOS[charAEntero(gusto) - 1]
 		);
 
-		if(fgetc(archivoPersonas) == '\r'){
-			fgetc(archivoPersonas);//Come finales de linea y adelanta hasta el EOF si llegamos al final
-		}
+		comerFinalesDeLinea(archivoPersonas);
 	}
 
 	for(unsigned long i = 0; i < personas->ultimoIndice; i++){

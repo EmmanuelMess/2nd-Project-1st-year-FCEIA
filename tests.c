@@ -29,6 +29,15 @@ void test_swap() {
 	assert(strcmp(p1->personaImprimible->array, "j,k,l,50,F,N\0") == 0);
 }
 
+void test_comerFinalesDeLinea() {
+	char buffer[] = "\r\n\r\n";
+	FILE * archivoTest = fmemopen(buffer, strlen(buffer), "r");
+	comerFinalesDeLinea(archivoTest);
+	assert(feof(archivoTest));
+	fclose(archivoTest);
+}
+
+
 void test_leerLocalidades_basico() {
 	char buffer[] = "1,HOSPITAL                         \n"
 	                "2,ZAPOTE                                      \n"
@@ -77,6 +86,7 @@ void test_leerLocalidades_caracteresNoASCII() {
 	assert(strcmp(localidades->array[2]->array, "ÑU\0") == 0);
 }
 
+
 void test_leerPersonasYParsear() {
 	char bufferLocalidades[] = "1,CHOMES                         \n"
 	                "2,CONCEPCION                                      \n"
@@ -101,12 +111,15 @@ void test_leerPersonasYParsear() {
 	assert(strcmp(personas->array[2]->personaImprimible->array, "RAFAEL,AGUERO,C.P. CRISTO REY,75,M,N\0") == 0);
 }
 
+
 void test_main() {
 	test_charAEntero();
 
 	test_stringAEnteroPositivo();
 
 	test_swap();
+
+	test_comerFinalesDeLinea();
 
 	test_leerLocalidades_basico();
 	test_leerLocalidades_retornoDeCarro();

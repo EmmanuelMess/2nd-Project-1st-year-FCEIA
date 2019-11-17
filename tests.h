@@ -10,6 +10,7 @@ void test_main();
 unsigned int  charAEntero(char caracter);
 unsigned int stringAEnteroPositivo(const char* string);
 void swap(struct Persona ** a, struct Persona ** b);
+void comerFinalesDeLinea(FILE * archivo);
 
 void leerLocalidades_testeable(struct ArrayStrings* localidades, FILE * archivoLocalidades);
 void leerPersonasYParsear_testeable(struct ArrayPersonas* personas, struct ArrayStrings* localidades, FILE * archivoPersonas);
