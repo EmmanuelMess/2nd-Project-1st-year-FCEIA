@@ -175,14 +175,22 @@ void leerPersonasYParsear_testeable(struct ArrayPersonas* personas, struct Array
 
 /**
  * NOMBRE Trabajo2Guimpel
+ *
  * SINOPSIS
- *     Trabajo2Guimpel
- *     Trabajo2Guimpel -p <numeroDePersonas>
- *     Trabajo2Guimpel -t
+ * 		Trabajo2Guimpel
+ * 		Trabajo2Guimpel -p <numeroDePersonas>
+ *  	Trabajo2Guimpel -t
+ *
  * 	DESCRIPCION
  * 		Trabajo2Guimpel: permite ingresar por teclado la cantidad de personas a imprimir
  * 		Trabajo2Guimpel -p <numeroDePersonas>: lo mismo que el anterior pero ahorra el tiempo del usuario
  * 		Trabajo2Guimpel -t: (solo desarrollo) testing
+ *
+ * 	PROBLEMAS CONOCIDOS
+ * 		El separador es "," y no ", " por lo que la salida de este programa
+ * 		no se puede ingresar como entrada a la solucion propuesta al TP1.
+ *
+ * 		Una solucion alternativa es parsear la salida de este programa y reemplazar "," por ", ".
  */
 int main(int argc, char * argv []) {
 	if(argc == 2) {//modo testing
