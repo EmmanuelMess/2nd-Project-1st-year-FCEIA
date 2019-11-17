@@ -25,8 +25,8 @@ void test_swap() {
 
 	swap(&p1, &p2);
 
-	assert(strcmp(p2->personaImprimible->array, "a,b,c,12,M,A\0") == 0);
-	assert(strcmp(p1->personaImprimible->array, "j,k,l,50,F,N\0") == 0);
+	assert(strcmp(p2->personaImprimible->array, "a, b, c, 12, M, A\0") == 0);
+	assert(strcmp(p1->personaImprimible->array, "j, k, l, 50, F, N\0") == 0);
 }
 
 void test_comerFinalesDeLinea() {
@@ -106,9 +106,9 @@ void test_leerPersonasYParsear() {
 
 	assert(personas->ultimoIndice == 3);
 
-	assert(strcmp(personas->array[0]->personaImprimible->array, "JOSE,DELGADO,CHOMES,56,M,A\0") == 0);
-	assert(strcmp(personas->array[1]->personaImprimible->array, "CARMEN,CORRALES,CONCEPCION,72,F,M\0") == 0);
-	assert(strcmp(personas->array[2]->personaImprimible->array, "RAFAEL,AGUERO,C.P. CRISTO REY,75,M,N\0") == 0);
+	assert(strcmp(personas->array[0]->personaImprimible->array, "JOSE, DELGADO, CHOMES, 56, M, A\0") == 0);
+	assert(strcmp(personas->array[1]->personaImprimible->array, "CARMEN, CORRALES, CONCEPCION, 72, F, M\0") == 0);
+	assert(strcmp(personas->array[2]->personaImprimible->array, "RAFAEL, AGUERO, C.P. CRISTO REY, 75, M, N\0") == 0);
 }
 
 
