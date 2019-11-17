@@ -75,15 +75,15 @@ struct Persona* crearPersona(char *nombre, char *apellido, char *localidad,
 	persona->personaImprimible = crearString(LARGO_DE_ASIGNACION_PALABRAS);
 
 	copiarAString(persona->personaImprimible, nombre);
-	copiarAString(persona->personaImprimible, ", \0");
+	copiarCharAString(persona->personaImprimible, ',');
 	copiarAString(persona->personaImprimible, apellido);
-	copiarAString(persona->personaImprimible, ", \0");
+	copiarCharAString(persona->personaImprimible, ',');
 	copiarAString(persona->personaImprimible, localidad);
-	copiarAString(persona->personaImprimible, ", \0");
+	copiarCharAString(persona->personaImprimible, ',');
 	copiarAString(persona->personaImprimible, edad);
-	copiarAString(persona->personaImprimible, ", \0");
+	copiarCharAString(persona->personaImprimible, ',');
 	copiarCharAString(persona->personaImprimible, genero);
-	copiarAString(persona->personaImprimible, ", \0");
+	copiarCharAString(persona->personaImprimible, ',');
 	copiarCharAString(persona->personaImprimible, gusto);
 
 	persona->personaImprimible->ultimoIndice++;//para el \0
